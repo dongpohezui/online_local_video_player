@@ -1,0 +1,34 @@
+<html>
+<head>
+	<title>用浏览器播放本地的视频</title>
+</head>
+<body>
+
+	<input type="file" id="file" onchange="onInputFileChange()">
+	</br>
+	倍速播放：<input type="text" id="playbackRate" onchange="onInputRateChange()">
+	<video id="video"  controls preload="metadata">
+		Amazing! Your browser can't support HTML5 Audio!
+	</video>
+
+</body>
+
+<script charset="utf-8">
+var video = document.getElementById("video");
+
+function onInputFileChange() {
+   var file = document.getElementById('file').files[0];
+   var url = URL.createObjectURL(file);
+   console.log(url);
+   video.src = url;
+   video.playbackRate = 1.0;
+}
+
+
+function onInputRateChange(){
+	video.playbackRate = document.getElementById('playbackRate').value;
+}
+
+</script>
+
+<html>
