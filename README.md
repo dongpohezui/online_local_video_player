@@ -47,7 +47,7 @@ https://www.zhihu.com/question/20033434
 
 
 ## 代码编写
-### \<vidoe>
+### \<video>
 ### playbackRate
 playbackRate 属性设置或返回音频/视频的当前播放速度
 
