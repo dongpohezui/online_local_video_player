@@ -10,14 +10,16 @@
 
 | 浏览器	  |         MP4	         | WebM	 |  Ogg  |
 | ---------- | --------------------- | ------ | ----- |
-| Internet   | Explorer	             | YES	  | NO	 |
+| Internet  Explorer | YES	  | NO	 | NO	 |
 | Chrome	 | YES	                 | YES	  | YES   |
 | Firefox	 | YES	                 | YES	  | YES   |
 | Safari	 | YES	                 | NO	  | NO    |
 | Opera	     | YES (从 Opera 25 起)	 | YES	  | YES   |
 
 MP4    = 带有 H.264 视频编码   和 AAC 音频编码的 MPEG 4 文件
+
 WebM = 带有 VP8 视频编码      和 Vorbis 音频编码的 WebM 文件
+
 Ogg    = 带有 Theora 视频编码  和 Vorbis 音频编码的 Ogg 文件
 
 可以通过js扩展其支持的视频格式，比如flv.js
@@ -35,7 +37,9 @@ Ogg    = 带有 Theora 视频编码  和 Vorbis 音频编码的 Ogg 文件
 
 ### 目前播放本地视频的时候使用的是什么播放器？
 迅雷内置的播放器XMP.exe
+
 好处是不用下载新的软件，不足是不支持倍速播放
+
 参考链接：哪个视频播放器好？ - 知乎
 https://www.zhihu.com/question/20033434
 
