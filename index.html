@@ -2,20 +2,80 @@
 <head>
 	<title>用浏览器播放本地的视频</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		#main {
+			width: 80%;
+			height: 80%;
+			padding: 15px;
+			margin: 20px auto 0;
+			border-radius: 10px;
+			background-color: #fce0ec;
+		}
+		#video{
+			max-height:80%;
+			margin: 20px auto 0;
+		}
+	</style>
+	
+
 </head>
+
 <body>
+
+<div id="main"> 
+
+支持把视频拖拽进来<br>
 
 	<input type="file" id="file" onchange="onInputFileChange()">
 	</br>
-	倍速播放：<input type="text" id="playbackRate" onchange="onInputRateChange()">
+	倍速播放：<input type="text" id="playbackRate" oninput ="onInputRateChange()">
 	<video id="video"  controls preload="metadata">
 		Amazing! Your browser can't support HTML5 Audio!
 	</video>
+
+</div>
 
 </body>
 
 <script charset="utf-8">
 var video = document.getElementById("video");
+
+var main = document.getElementById("main");
+
+
+main.addEventListener("dragenter", function (event) {
+			event.preventDefault();
+			event.stopPropagation();
+})
+
+
+main.addEventListener("dragover", function(event) {
+main.style.background = '#0ce0ec';
+ event.preventDefault();
+ event.stopPropagation();
+ event.dataTransfer.dropEffect = "move";
+})
+
+
+main.addEventListener("drop", function(event) {
+main.style.background = '#fce0ec';
+
+    event.preventDefault();
+	 event.stopPropagation();
+    let file = this.files || event.dataTransfer.files;
+
+   var url = URL.createObjectURL(file[0]);
+   console.log(url);
+   video.src = url;
+   video.playbackRate = 1.0;
+   
+})
+
 
 function onInputFileChange() {
    var file = document.getElementById('file').files[0];
